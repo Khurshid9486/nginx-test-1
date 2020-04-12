@@ -1,0 +1,16 @@
+---
+# tasks file for nginx-test
+  - name Add epel-rel
+    yum:
+      name: epel-release
+      state: present
+
+  - name: install nginix
+    yum:
+      name: nginx
+      state: present
+
+  - name: insert index page
+    copy: 
+      src: index.html
+      dest: /usr/share/nginx/html/index.html
